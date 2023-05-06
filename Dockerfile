@@ -4,6 +4,10 @@ FROM node:10-alpine as builder
 # copy the package.json to install dependencies
 COPY package.json ./
 
+# variaveis do backend
+ENV BACKEND_URL=https://spotmusic-backend-4qt4toukxa-uc.a.run.app/
+ENV PORT=8080
+
 # Install the dependencies and make the folder
 RUN npm install && mkdir /react-ui && mv ./node_modules ./react-ui
 
