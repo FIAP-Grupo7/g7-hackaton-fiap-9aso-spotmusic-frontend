@@ -25,7 +25,7 @@ jobs:
   
   
   Deploy-Production:
-    needs: Deploy-Prod
+    needs: Build
     runs-on: ubuntu-latest
 
     steps:
