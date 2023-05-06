@@ -6,7 +6,7 @@ function App() {
    	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		fetch("$BACKEND_URL")
+		fetch("https://spotmusic-backend-4qt4toukxa-uc.a.run.app/")
 		 .then((res) => res.json())
       		 .then((result) => setData(result))
       		 .catch((err) => console.log("error"));
