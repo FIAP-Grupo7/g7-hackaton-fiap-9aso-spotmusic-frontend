@@ -1,6 +1,5 @@
 # variaveis do backend
-ARG backend_url
-ENV backend_url $backend_url
+ENV BACKEND_URL 34.27.173.211
 
 # build
 FROM node:16.13.2-alpine as build
