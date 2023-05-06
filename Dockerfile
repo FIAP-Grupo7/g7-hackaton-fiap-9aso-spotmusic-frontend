@@ -5,7 +5,9 @@ FROM node:16.13.2-alpine as build
 COPY package.json ./
 
 # Install the dependencies and make the folder
-RUN npm install
+RUN npm install && mkdir /react-ui && mv ./node_modules ./react-ui
+
+WORKDIR /react-ui
 
 COPY . .
 
@@ -16,7 +18,7 @@ FROM nginx:alpine
 
 #!/bin/sh
 
-COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
