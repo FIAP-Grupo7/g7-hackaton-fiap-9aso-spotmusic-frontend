@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json ./
 
 # variaveis do backend
-ENV BACKEND_URL=34.27.173.211:8080
+ENV BACKEND_URL=https://spotmusic-backend-4qt4toukxa-uc.a.run.app/
 
 RUN npm install
 COPY . ./
