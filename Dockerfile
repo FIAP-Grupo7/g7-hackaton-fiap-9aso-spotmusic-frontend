@@ -1,10 +1,11 @@
-# variaveis do backend
-ENV BACKEND_URL=34.27.173.211
-
 # build
 FROM node:16.13.2-alpine as build
 WORKDIR /app
 COPY package.json ./
+
+# variaveis do backend
+ENV BACKEND_URL=34.27.173.211
+
 RUN npm install
 COPY . ./
 RUN npm run build
